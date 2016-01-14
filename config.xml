@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.phonegap.mietest"
         version   = "1.0.0">
 
     <name>MIETest</name>
@@ -24,9 +24,9 @@
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -76,7 +76,7 @@
     <icon src="icon/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="icon/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
     <icon src="icon/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
-    <icon src="icon/blackberry/icon-80.png"     gap:platform="blackberry" />
+    <!-- <icon src="icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
     <icon src="icon/ios/icon-72.png"            gap:platform="ios"        width="72" height="72" />
@@ -84,20 +84,20 @@
     <icon src="icon/ios/icon-72-2x.png"         gap:platform="ios"        width="144" height="144" />
     <icon src="icon/webos/icon-64.png"          gap:platform="webos" />
     <icon src="icon/windows-phone/icon-48.png"  gap:platform="winphone" />
-    <icon src="icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
+    <icon src="icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" /> -->
 
     <!-- Define app splash screen for each platform. -->
     <gap:splash src="splash/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
     <gap:splash src="splash/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
     <gap:splash src="splash/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
     <gap:splash src="splash/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="screen/blackberry/screen-225.png"              gap:platform="blackberry" />
+    <!-- <gap:splash src="screen/blackberry/screen-225.png"              gap:platform="blackberry" />
     <gap:splash src="screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
     <gap:splash src="screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
     <gap:splash src="screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
     <gap:splash src="screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
+    <gap:splash src="screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" /> -->
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
     <string>100</string>
@@ -126,9 +126,9 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-    <platform name="ios">
+    <!-- <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-    </platform>
+    </platform> -->
 
 </widget>
