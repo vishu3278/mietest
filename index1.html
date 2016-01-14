@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<title>miet</title>
+<link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="fonts/icons.css">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+<script src="js/jquery-2.0.3.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+
+<!--login signup page-->
+<div data-role="page" id="welcome">
+  <div data-role="header"><a href="#" class="ui-btn ui-btn-left img-btn"><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
+    <h1>Sign In</h1>
+  </div>
+  <div role="main" class="ui-content ui-noboxshadow ui-notextshadow">
+    <div data-role="tabs" id="tabs">
+      <div data-role="navbar" class="ui-noboxshadow">
+        <ul>
+          <li><a href="#login" data-ajax="false" class="ui-btn-active">Login</a></li>
+          <li><a href="#signup" data-ajax="false">Register</a></li>
+        </ul>
+      </div>
+      <div id="login" class=" ui-body ">
+        <form class="nice-form ui-noboxshadow">
+          <div class="input-group has-icon">
+            <input type="email" placeholder="Email" >
+            <span class="icon-person_outline"></span> </div>
+          <div class="input-group has-icon">
+            <input type="password" placeholder="Password">
+            <span class="icon-lock_outline"></span> </div>
+          <div class="input-group has-icon">
+            <input type="password" placeholder="Confirm Password">
+            <span class="icon-lock_outline"></span> </div>
+          <button type="button" class="ui-btn-prime">Submit</button>
+          <button type="submit" class="ui-btn-second">Submit</button>
+          <a href="#profile" class="ui-btn ui-btn-third">Profile page</a>
+        </form>
+      </div> <!--tab1 end-->
+      <div id="signup" class="ui-body">
+        <form class="nice-form ui-noboxshadow">
+          <div class="input-group has-icon">
+            <input type="text" placeholder="Full Name" >
+            <span class="icon-person_outline"></span> </div>
+          <div class="input-group has-icon">
+            <input type="email" placeholder="Email">
+            <span class="icon-mail_outline"></span> </div>
+          <div class="input-group has-icon">
+            <input type="tel" placeholder="Mobile">
+            <span class="icon-smartphone"></span> </div>
+          <div class="input-group has-icon">
+            <input type="date" placeholder="Batch ( Admission Year)">
+            <span class="icon-event"></span> </div>
+          <div class="input-group has-icon">
+            <select data-native-menu="false" >
+              <option value="0" data-placeholder="true">Branch</option>
+              <option value="1">Mechanical</option>
+              <option value="2">Electrical</option>
+              <option value="3">Computer</option>
+            </select>
+            <span class="icon-call_split"></span> </div>
+          <div class="input-group has-icon">
+            <select data-native-menu="false" >
+              <option value="0" data-placeholder="true">Current Occupation</option>
+              <option value="1">Mechanical</option>
+              <option value="2">Electrical</option>
+              <option value="3">Computer</option>
+            </select>
+            <span class="icon-business"></span> </div>
+          <div class="input-group has-icon">
+            <input type="text" placeholder="Business Address" >
+            <span class="icon-place"></span> </div>
+          <div class="input-group has-icon">
+            <input type="text" placeholder="Hobbies" >
+            <span class="icon-brush"></span> </div>
+          <div class="input-group has-icon">
+            <input type="password" placeholder="Password">
+            <span class="icon-lock_outline"></span> </div>
+          <div class="input-group has-icon">
+            <input type="password" placeholder="Confirm Password">
+            <span class="icon-lock_outline"></span> </div>
+          <button type="button" class="ui-btn-prime">Submit</button>
+          <a href="#profile" class="ui-btn ui-btn-second">Profile page</a> <a href="#profile" class="ui-btn ui-btn-third">Profile page</a>
+        </form>
+      </div> <!--tab2 end-->
+    </div>
+  </div>
+</div>
+
+<!--Profile page-->
+<div data-role="page" id="profile" class="ui-page">
+  <div data-role="header"><a href="#welcome" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
+    <h1>Profile</h1>
+    <a href="#profilemenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>
+    <div data-role="popup" id="profilemenu">
+      <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
+        <li><a href="#list">List</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#welcome">Signout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <div class="profile">
+      <div class="image"><img src="img/vishu123.jpg" width="512" height="512" alt="vishu"></div>
+      <h2 class="name">Vishwajeet Mandal</h2>
+    </div>
+    <div class="nice-form">
+      <ul data-role="listview" >
+        <li class="has-icon input-group">
+          <input type="text" value="vivaan456@gmail.com" placeholder="Email">
+          <span class="icon-mail_outline"></span></li>
+        <li class="has-icon input-group">
+          <input type="tel" value="9810992625" placeholder="Phone">
+          <span class="icon-smartphone"></span></li>
+        <li class="has-icon input-group">
+          <input type="text" value="2014" placeholder="Batch">
+          <span class="icon-event"></span></li>
+        <li class="has-icon input-group">
+          <select data-native-menu="false" >
+            <option value="0" data-placeholder="true">Branch</option>
+            <option value="1">Mechanical</option>
+            <option value="2">Electrical</option>
+            <option value="3">Computer</option>
+          </select>
+          <span class="icon-call_split"></span></li>
+        <li class="has-icon input-group">
+          <select data-native-menu="false" >
+            <option value="0" data-placeholder="true">Current Occupation</option>
+            <option value="1">Manager</option>
+            <option value="2">Astt. Manager</option>
+          </select>
+          <span class="icon-business"></span></li>
+        <li class="has-icon input-group">
+          <input type="text" value="IBM, Pune" placeholder="Business Address">
+          <span class="icon-place"></span></li>
+        <li class="has-icon input-group">
+          <input type="text" value="Singing, Traveling" placeholder="Hobbies">
+          <span class="icon-brush"></span></li>
+        <li class="ui-field-contain">
+          <button type="submit" class="ui-btn ui-btn-prime" >Save</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--Invite page-->
+<div data-role="page" id="invite">
+  <div data-role="header"><a href="#welcome" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
+    <h1>Invite MIETians</h1>
+    <a href="#menu3" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>
+    <div data-role="popup" id="menu3">
+      <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
+        <li><a href="#list">List</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#welcome">Signout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content" >
+    <div class="ui-body nice-form">
+      <ul data-role="listview" data-inset="true" data-shadow="false" data-corners="false">
+        <li class="input-group has-icon">
+          <input type="email" placeholder="Enter Friend’s Email">
+          <span class="icon-mail_outline"></span> </li>
+        <li class="ui-field-contain">
+          <h3 style="text-align:center; font-size:1.25em; color:#666;">OR</h3>
+        </li>
+        <li class="input-group has-icon">
+          <input type="tel" placeholder="Enter Friend’s Mobile Number">
+          <span class="icon-smartphone"></span> </li>
+        <li>
+          <button class="ui-btn ui-btn-prime">Invite</button>
+        </li>
+      </ul>
+      </div>
+  </div>
+</div>
+
+<!--list page-->
+<div data-role="page" id="list">
+  <div data-role="header"> <a href="#" class="ui-btn ui-btn-left img-btn"><img src="img/logo-icon.png" width="76" height="64" alt="logo"></a>
+    <h1>MIETians</h1>
+    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" class="ui-btn-right">
+      <a href="#" data-position-to="origin" class="ui-btn "><span class="icon-search "></span></a> <a href="#" class="ui-btn "><span class="icon-filter_list "></span></a> <a href="#listmenu" data-rel="popup" class=" ui-btn "><span class="icon-more_vert "></span></a>
+    </fieldset>
+    <!--<a href="#listmenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>-->
+    <div data-role="popup" id="listmenu">
+      <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
+        <li><a href="#list">List</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#welcome">Signout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="main" >
+    <div class="ui-content user-list">
+      <ul data-role="listview" data-icon="false">
+        <li><a href="#detail" ><img src="img/user123.jpg" width="100" height="100" alt="fridge">
+          <h2>Aarav Sharma <small>(CEO)</small></h2>
+          <p>aarav.sharma@gmail.com<br>
+            9876543210</p>
+          <div class="ui-li-aside"><strong>1988</strong><br>
+            <small>Batch</small></div>
+          </a></li>
+        <li><a href="#detail" ><img src="img/user112.jpg" class="ui-li-thumb" alt="tv" width="100" height="100">
+          <h2>Vishwajeet Mandal <small>(MD)</small></h2>
+          <p>aarav.sharma@gmail.com<br>
+            9876543210</p>
+          <div class="ui-li-aside"><strong>1988</strong><br>
+            <small>Batch</small></div>
+          </a></li>
+        <li><a href="#detail" ><img src="img/user111.jpg" alt="washing" width="100" height="100">
+          <h2>Vishwajeet Mandal <small>(COO)</small></h2>
+          <p>aarav.sharma@gmail.com<br>
+            9876543210</p>
+          <div class="ui-li-aside"><strong>1988</strong><br>
+            <small>Batch</small></div>
+          </a></li>
+        <li><a href="#detail" ><img src="img/user122.jpg" alt="microwave" width="100" height="100">
+          <h2>Vishwajeet Mandal <small>(CTO)</small></h2>
+          <p>aarav.sharma@gmail.com<br>
+            9876543210</p>
+          <div class="ui-li-aside"><strong>1988</strong><br>
+            <small>Batch</small></div>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--chat page-->
+<div data-role="page" id="chat">
+	<div data-role="header"> <a href="#" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span> <img src="img/user123.jpg" class="circle" width="100" height="100" alt="logo"></a>
+    <h1>Aarav Sharma</h1>
+    <a href="#chatmenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>
+    <div data-role="popup" id="chatmenu">
+      <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
+        <li><a href="#list">List</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#welcome">Signout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="main">
+    <div id="chatbox">
+      <ul>
+        <li class="left"><b>Mahavastu</b> <small>(07-Aug-2015, 8:37 AM)</small> <br>
+          hello</li>
+        <li class="left"><b>Mahavastu</b> <small>(07-Aug-2015, 8:37 AM)</small> <br>
+          How are you</li>
+        <li class="left"><b>Mahavastu</b> <small>(07-Aug-2015, 8:38 AM)</small> <br>
+          hello</li>
+        <li class="left"><b>Mahavastu</b> <small>(07-Aug-2015, 8:40 AM)</small> <br>
+          What should I do</li>
+         <li class="right"><small>(11-Jan-2016, 2:55 AM)</small> <br> do chat</li>
+      </ul>
+    </div>
+    <form name="message" action="" class="send-form">
+    	<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+            <input type="text" data-shadow="false" data-corners="false" >
+            <a href="#" data-role="button" class="icon-btn" ><span class="icon-insert_emoticon icon-2x"></span></a>
+            <button type="submit" class="send-button" ><i class="icon-send icon-2x"></i></button>
+            
+        </fieldset>
+    </form>
+  </div>
+</div>
+<!--Events list page-->
+<div data-role="page" id="events">
+  <div data-role="header"><a href="#welcome" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
+    <h1>Events</h1>
+    <a href="#eventsmenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>
+    <div data-role="popup" id="eventsmenu">
+      <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
+        <li><a href="#list">List</a></li>
+        <li><a href="#chat">Chat</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#welcome">Signout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <div class="block">
+      <div class="media"><img src="img/slider1.jpg" width="604" height="378" alt="img">
+        <div class="tag">
+          <p class="">024<br>
+            <small>Going</small></p>
+          <a href="#" class="share"><span class="icon-share"></span></a></div>
+      </div>
+      <div class="body">
+        <h3>New Year Celebration with all MIETians</h3>
+        <div class="date">02<br>
+          Jan</div>
+        <div class="action">
+          <p>08:00 pm - 01:00 am </p>
+          <button class="ui-btn ui-btn-prime " data-mini="true">Join Now</button>
+        </div>
+        <div class="descrip">
+          <p>Hard Rock Cafe , M 110, 1st Floor, 
+            DLF Place, Saket, New Delhi, Delhi 17 </p>
+          <p>Organised by <a href="#">VIVAN OBEROI</a></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="block">
+      <div class="media"><img src="img/tv.jpg" width="604" height="342" alt="img">
+        <div class="tag">
+          <p class="">024<br>
+            <small>Going</small></p>
+          <a href="#" class="share"><span class="icon-share"></span></a></div>
+      </div>
+      <div class="body">
+        <h3>Crowdfund your Hardware Idea</h3>
+        <div class="date">10<br>
+          Jan</div>
+        <div class="action">
+          <p>08:00 pm - 01:00 am </p>
+          <button class="ui-btn ui-btn-prime " data-mini="true">Join Now</button>
+        </div>
+        <div class="descrip">
+          <p>Jmoon Makerspace A-51, 3rd Floor, Narang Colony, Janak Puri New Delhi 58</p>
+          <p>Organised by <a href="#">ANANYA</a></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
