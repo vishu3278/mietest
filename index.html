@@ -7,9 +7,12 @@
 <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="fonts/icons.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
+<!--<script type="text/javascript" src="cordova.js"></script>-->
 <script src="js/jquery-2.0.3.min.js"></script>
+
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
-<script src="js/app.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="app.js"></script>
 </head>
 
 <body>
@@ -20,6 +23,7 @@
     <h1>Sign In</h1>
   </div>
   <div role="main" class="ui-content ui-noboxshadow ui-notextshadow">
+  <div id="output"></div>
     <div  id="tabs">
       <div data-role="navbar" class="ui-noboxshadow">
         <ul>
@@ -28,63 +32,62 @@
         </ul>
       </div>
       <div id="login" class=" ui-body ">
-        <form class="nice-form ui-noboxshadow">
+        <form class="nice-form ui-noboxshadow" id="loginForm">
           <div class="input-group has-icon">
-            <input type="email" placeholder="Email" >
+            <input type="email" name="email" id="email" placeholder="Email" class="required email">
             <span class="icon-person_outline"></span> </div>
           <div class="input-group has-icon">
-            <input type="password" placeholder="Password">
+            <input type="password" name="password" id="password" placeholder="Password" class="required ">
             <span class="icon-lock_outline"></span> </div>
-          <div class="input-group has-icon">
-            <input type="password" placeholder="Confirm Password">
-            <span class="icon-lock_outline"></span> </div>
-          <button type="button" class="ui-btn-prime">Submit</button>
-          <button type="submit" class="ui-btn-second">Submit</button>
+          <!--<button type="button" class="ui-btn-prime">Submit</button>-->
+          <button type="submit" class="ui-btn-prime">Submit</button>
         </form>
       </div> <!--tab1 end-->
       <div id="signup" class="ui-body">
-        <form class="nice-form ui-noboxshadow">
+        <form id="regForm" class="nice-form ui-noboxshadow">
           <div class="input-group has-icon">
-            <input type="text" placeholder="Full Name" >
+            <input type="text" name="name" id="name" placeholder="Full Name" >
             <span class="icon-person_outline"></span> </div>
           <div class="input-group has-icon">
-            <input type="email" placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="Email">
             <span class="icon-mail_outline"></span> </div>
           <div class="input-group has-icon">
-            <input type="tel" placeholder="Mobile">
+            <input type="tel" name="mobile" id="mobile" placeholder="Mobile">
             <span class="icon-smartphone"></span> </div>
           <div class="input-group has-icon">
-            <input type="date" placeholder="Batch ( Admission Year)">
+            <input type="date" name="date" id="date" placeholder="Batch ( Admission Year)">
             <span class="icon-event"></span> </div>
           <div class="input-group has-icon">
-            <select data-native-menu="false" >
+            <!--<select data-native-menu="false" >
               <option value="0" data-placeholder="true">Branch</option>
               <option value="1">Mechanical</option>
               <option value="2">Electrical</option>
               <option value="3">Computer</option>
-            </select>
+            </select>-->
+            <input type="text" name="branch" id="branch" placeholder="Branch">
             <span class="icon-call_split"></span> </div>
           <div class="input-group has-icon">
-            <select data-native-menu="false" >
+            <!--<select data-native-menu="false" >
               <option value="0" data-placeholder="true">Current Occupation</option>
               <option value="1">Mechanical</option>
               <option value="2">Electrical</option>
               <option value="3">Computer</option>
-            </select>
+            </select>-->
+            <input type="text" name="occu" id="occu" placeholder="Occupation">
             <span class="icon-business"></span> </div>
           <div class="input-group has-icon">
-            <input type="text" placeholder="Business Address" >
+            <input type="text" name="address" id="address" placeholder="Business Address" >
             <span class="icon-place"></span> </div>
           <div class="input-group has-icon">
-            <input type="text" placeholder="Hobbies" >
+            <input type="text" name="hobbies" id="hobbies" placeholder="Hobbies" >
             <span class="icon-brush"></span> </div>
           <div class="input-group has-icon">
-            <input type="password" placeholder="Password">
+            <input type="password" name="pass1" id="pass1" placeholder="Password">
             <span class="icon-lock_outline"></span> </div>
           <div class="input-group has-icon">
-            <input type="password" placeholder="Confirm Password">
+            <input type="password" name="pass2" id="pass2" placeholder="Confirm Password">
             <span class="icon-lock_outline"></span> </div>
-          <button type="button" class="ui-btn-prime">Submit</button>
+          <!--<button type="button" class="ui-btn-prime">Submit</button>-->
           <button type="submit" class="ui-btn-second">Submit</button>
         </form>
       </div> <!--tab2 end-->

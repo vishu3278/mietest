@@ -1,28 +1,93 @@
-var HOSTURL = 'http://mahavastu.com/mitalumni/';
-$(document).on('pageinit','#list',function(){
+var HOSTURL = 'http://localhost/mitalumni/';
+var loggedUserId = 0;
 
-	var output = $('ul#userList');
-	console.log('pageinit '+output.length);
-	$.ajax({
-		url: HOSTURL+'apis/userslist.php',
-		dataType: 'jsonp',
-		// jsonp: 'jsoncallback',
-		timeout: 5000,
-		success: function(data, status){
-			if(data.status==1){
-				$.each(data.user, function(i,item){ 
-					var landmark = '<li class="ui-li-has-thumb"><a href="#" class="ui-btn"><img src="js/'+HOSTURL+item.photo+'" /><small>'+item.current_occupation+'</small><h2>'+item.full_name+'</h2>'
-					+ '<p>'+item.email+'<br>'
-					+ item.mobile+'</p><div class="ui-li-aside"><strong>'
-					+ item.passing_year + '</strong><br><small>Batch</small></div></a></li>';
-					
-					output.append(landmark);
-				});
-			}
+$(document).on('pageinit','#welcome',function(){
+
+	var output = $("#output") ;
+
+	$("#loginForm").validate({
+			errorPlacement: function(error, element) {
+				error.insertBefore();
+			},
 			
+			submitHandler: function(form){
+				
+				var user_email = $("#email").val();
+			    if (user_email == null || user_email == "") {
+			        alert("Please Enter Email ID");
+			    }
+			    var password = $("#password").val();
+			    if (password == null || password == "") {
+			        alert("Please Enter Password");
+			    }
+			    var loginobj = {
+			        "email": user_email,
+			        "password": password
+			    }
+
+				$.ajax({
+					url: HOSTURL+'apis/login.php',
+					dataType: 'json',
+					data: JSON.stringify(loginobj),
+					type : 'POST',
+					contentType: 'application/json',		// The content type used when sending data to the server.
+					cache: false,				// To unable request pages to be cached
+					processData:false,			// To send DOMDocument or non processed data file it is set to false
+					success: function (data, status, jqXHR) {
+                		// var response = JSON.stringify(data);
+                		// console.log(data.status);
+						if(data.status==1){
+							// alert(data.data.user.full_name);
+							loggedUserId = data.data.user.user_id;
+							// console.log(data.data.user.user_id);
+							$.mobile.changePage("#profile", {transition: "slideup"});
+						}else{
+							alert("Wrong login details.");
+						}
+					},
+					error: function(){
+						output.html('<p>There was an error loading the data</p>');
+					}
+
+
+				});
+				
+			}	
+	});
+	
+	
+});
+
+$(document).on('pageinit','#profile',function(){
+	var loginobj = {
+	        "user_id": loggedUserId
+	    }
+	console.log(loggedUserId);
+	$.ajax({
+		url: HOSTURL+'apis/user-profile.php',
+		dataType: 'json',
+		data: JSON.stringify(loginobj),
+		type : 'POST',
+		contentType: 'application/json',		// The content type used when sending data to the server.
+		cache: false,				// To unable request pages to be cached
+		processData:false,			// To send DOMDocument or non processed data file it is set to false
+		success: function (data, status, jqXHR) {
+    		// var response = JSON.stringify(data);
+    		// console.log(data.status);
+			if(data.status==1){
+				// alert(data.data.user.full_name);
+				$("#name").val(data.data.user.full_name);
+				console.log(data.data.user.full_name);
+				
+				// $.mobile.changePage("#profile", {transition: "slideup"});
+			}else{
+				alert(data.msg);
+			}
 		},
 		error: function(){
-			output.html('<li>There was an error loading the data.</li>');
+			output.html('<p>There was an error loading the data</p>');
 		}
+
+
 	});
 });
