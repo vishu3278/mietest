@@ -7,11 +7,8 @@
 <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="fonts/icons.css">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
-<!--<script type="text/javascript" src="cordova.js"></script>-->
 <script src="js/jquery-2.0.3.min.js"></script>
-
 <script src="js/jquery.mobile-1.4.5.min.js"></script>
-<script src="js/jquery.validate.js"></script>
 <script src="app.js"></script>
 </head>
 
@@ -32,7 +29,7 @@
         </ul>
       </div>
       <div id="login" class=" ui-body ">
-        <form class="nice-form ui-noboxshadow" id="loginForm">
+        <form class="nice-form ui-noboxshadow" id="loginForm" >
           <div class="input-group has-icon">
             <input type="email" name="email" id="email" placeholder="Email" class="required email">
             <span class="icon-person_outline"></span> </div>
@@ -40,7 +37,7 @@
             <input type="password" name="password" id="password" placeholder="Password" class="required ">
             <span class="icon-lock_outline"></span> </div>
           <!--<button type="button" class="ui-btn-prime">Submit</button>-->
-          <button type="submit" class="ui-btn-prime">Submit</button>
+          <button type="button" onClick="loginProcess()" class="ui-btn-prime">Submit</button>
         </form>
       </div> <!--tab1 end-->
       <div id="signup" class="ui-body">
@@ -133,45 +130,52 @@
   </div>
   <div data-role="content">
     <div class="profile">
-      <div class="image"><img src="img/vishu123.jpg" width="512" height="512" alt="vishu"></div>
-      <h2 class="name">Vishwajeet Mandal</h2>
+      <div class="image"><img src="img/vishu123.jpg" id="profileImg" alt="pic"></div>
+      <h2 class="name" id="userName">Vishwajeet Mandal</h2>
     </div>
     <div class="nice-form">
-      <ul data-role="listview" >
-        <li class="has-icon input-group">
-          <input type="text" value="vivaan456@gmail.com" placeholder="Email">
-          <span class="icon-mail_outline"></span></li>
-        <li class="has-icon input-group">
-          <input type="tel" value="9810992625" placeholder="Phone">
-          <span class="icon-smartphone"></span></li>
-        <li class="has-icon input-group">
-          <input type="text" value="2014" placeholder="Batch">
-          <span class="icon-event"></span></li>
-        <li class="has-icon input-group">
-          <select data-native-menu="false" >
-            <option value="0" data-placeholder="true">Branch</option>
-            <option value="1">Mechanical</option>
-            <option value="2">Electrical</option>
-            <option value="3">Computer</option>
-          </select>
-          <span class="icon-call_split"></span></li>
-        <li class="has-icon input-group">
-          <select data-native-menu="false" >
-            <option value="0" data-placeholder="true">Current Occupation</option>
-            <option value="1">Manager</option>
-            <option value="2">Astt. Manager</option>
-          </select>
-          <span class="icon-business"></span></li>
-        <li class="has-icon input-group">
-          <input type="text" value="IBM, Pune" placeholder="Business Address">
-          <span class="icon-place"></span></li>
-        <li class="has-icon input-group">
-          <input type="text" value="Singing, Traveling" placeholder="Hobbies">
-          <span class="icon-brush"></span></li>
-        <li class="ui-field-contain">
-          <button type="submit" class="ui-btn ui-btn-prime" >Save</button>
-        </li>
-      </ul>
+    	<form id="userForm" class="">
+          <ul data-role="listview" >
+            <li class="has-icon input-group">
+              <input type="text" name="name" id="name" value="vishu" placeholder="Name">
+              <span class="icon-mail_outline"></span></li>
+            <li class="has-icon input-group">
+              <input type="email" name="email" id="email" value="vishu@gmail.com" placeholder="Email">
+              <span class="icon-mail_outline"></span></li>
+            <li class="has-icon input-group">
+              <input type="tel" name="phone" id="phone" value="9810992625" placeholder="Phone">
+              <span class="icon-smartphone"></span></li>
+            <li class="has-icon input-group">
+              <input type="text" name="batch" id="batch" value="2014" placeholder="Batch">
+              <span class="icon-event"></span></li>
+            <li class="has-icon input-group">
+              <!--<select data-native-menu="false" >
+                <option value="0" data-placeholder="true">Branch</option>
+                <option value="1">Mechanical</option>
+                <option value="2">Electrical</option>
+                <option value="3">Computer</option>
+              </select>-->
+              <input type="text" name="branch" id="branch" placeholder="Branch">
+              <span class="icon-call_split"></span></li>
+            <li class="has-icon input-group">
+              <!--<select data-native-menu="false" >
+                <option value="0" data-placeholder="true">Current Occupation</option>
+                <option value="1">Manager</option>
+                <option value="2">Astt. Manager</option>
+              </select>-->
+              <input type="text" name="occup" id="occup" placeholder="Occupation">
+              <span class="icon-business"></span></li>
+            <li class="has-icon input-group">
+              <input type="text" name="location" id="location" value="IBM, Pune" placeholder="Business Address">
+              <span class="icon-place"></span></li>
+            <!--<li class="has-icon input-group">
+              <input type="text" name="hobby" id="hobby" value="Singing, Traveling" placeholder="Hobbies">
+              <span class="icon-brush"></span></li>-->
+            <li class="ui-field-contain">
+              <button type="button" class="ui-btn ui-btn-prime" >Save</button>
+            </li>
+          </ul>
+      </form>
     </div>
   </div>
 </div>
@@ -269,34 +273,37 @@
   </div>
   <div data-role="main" >
   	<div data-role="tabs" id="tabs2"><div data-role="navbar"><ul><li><a href="#one" data-ajax="false">MIETians</a></li><li><a href="#two" data-ajax="false">Events</a></li><li><a href="#three" data-ajax="false">Invite</a></li></ul></div><div id="one" ><div class="user-list">
-          <ul id="userList" data-role="listview" data-icon="false">
+          <ul id="userList" data-role="listview" data-split-icon="user" data-icon="false">
             <li><a href="#userDetail" ><img src="img/user123.jpg" width="100" height="100" alt="fridge">
               <h2>Aarav Sharma <small>(CEO)</small></h2>
               <p>aarav.sharma@gmail.com<br>
                 9876543210</p>
               <div class="ui-li-aside"><strong>1988</strong><br>
                 <small>Batch</small></div>
-              </a></li>
+              </a><a href="#" class="ui-icon-comment ui-nodisc-icon ui-alt-icon"></a></li>
             <li><a href="#userDetail" ><img src="img/user112.jpg" class="ui-li-thumb" alt="tv" width="100" height="100">
               <h2>Vishwajeet Mandal <small>(MD)</small></h2>
               <p>aarav.sharma@gmail.com<br>
                 9876543210</p>
               <div class="ui-li-aside"><strong>1988</strong><br>
-                <small>Batch</small></div>
-              </a></li>
+                <small>Batch</small>
+                </div>
+              </a>
+              <a href="#" class="ui-icon-comment ui-nodisc-icon ui-alt-icon"></a>
+              </li>
             <li><a href="#userDetail" ><img src="img/user111.jpg" alt="washing" width="100" height="100">
               <h2>Vishwajeet Mandal <small>(COO)</small></h2>
               <p>aarav.sharma@gmail.com<br>
                 9876543210</p>
               <div class="ui-li-aside"><strong>1988</strong><br>
-                <small>Batch</small></div>
+                <small>Batch</small><br><span class="icon-chat_bubble_outline icon-2x"></span></div>
               </a></li>
             <li><a href="#userDetail" ><img src="img/user122.jpg" alt="microwave" width="100" height="100">
               <h2>Vishwajeet Mandal <small>(CTO)</small></h2>
               <p>aarav.sharma@gmail.com<br>
                 9876543210</p>
               <div class="ui-li-aside"><strong>1988</strong><br>
-                <small>Batch</small></div>
+                <small>Batch</small><br><span class="icon-chat_bubble_outline icon-2x"></span></div>
               </a></li>
           </ul>
         </div></div><div id="two"><div class="block">
