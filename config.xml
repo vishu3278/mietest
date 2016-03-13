@@ -99,8 +99,8 @@
     <gap:splash src="screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" /> -->
 
     <!--<gap:config-file platform="ios" parent="CFBundleShortVersionString">
-    <string>100</string>-->
-    </gap:config-file>
+    <string>100</string>
+    </gap:config-file>-->
 
     <!--
         Define access to external domains.
