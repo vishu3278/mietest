@@ -5,47 +5,63 @@ var output = $("#output");
 
 function loginProcess () {
 	var user_email = $("#email").val();
-    if (user_email == null || user_email == "") {
+    /*if (user_email == null || user_email == "") {
         alert("Please Enter Email ID");
-    };
+    };*/
     var password = $("#password").val();
-    if (password == null || password == "") {
+    /*if (password == null || password == "") {
         alert("Please Enter Password");
-    };
+    };*/
     var loginobj = {
         "email": user_email,
         "password": password
     };
 
     
+    if(loginobj.email != '' && loginobj.password !== ''){
+    	console.log(loginobj);
+		$.mobile.loading("show",{
+			textVisible: true,
+			theme:"b"
+		});
 
-	$.ajax({
-		url: HOSTURL+'apis/login.php',
-		dataType: 'json',
-		data: JSON.stringify(loginobj),
-		type : 'POST',
-		contentType: 'application/json',		// The content type used when sending data to the server.
-		cache: false,				// To unable request pages to be cached
-		processData:false,			// To send DOMDocument or non processed data file it is set to false
-		success: function (data, status, jqXHR) {
-			// console.log(data);
-			if(data.status==1){
-				// alert(data.data.user.full_name);
-				loggedUserId = data.data.user.user_id;
-				localStorage.loggedUserId = data.data.user.user_id;
-				// console.log(data.data.user.user_id);
-				$.mobile.changePage("#profile", {transition: "slideup"});
-			}else{
-				// alert(data.msg);
-				output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
+		$.ajax({
+			url: HOSTURL+'apis/login.php',
+			dataType: 'json',
+			data: JSON.stringify(loginobj),
+			type : 'POST',
+			contentType: 'application/json',		// The content type used when sending data to the server.
+			cache: false,				// To unable request pages to be cached
+			processData:false,			// To send DOMDocument or non processed data file it is set to false
+			success: function (data, status, jqXHR) {
+				// console.log(data);
+				$.mobile.loading("hide");
+				if(data.status==1){
+					// alert(data.data.user.full_name);
+					loggedUserId = data.data.user.user_id;
+					localStorage.loggedUserId = data.data.user.user_id;
+					// console.log(data.data.user.user_id);
+					
+					$.mobile.changePage("#profile", {transition: "slideup"});
+				}else{
+					alert(data.error);
+					console.log(data.error);
+					// output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
+
+				}
+			},
+			error: function(x,y,z){
+				$.mobile.loading("hide");
+				alert('An error has occurred:\n' + x + '\n' + y + '\n' + z);
 			}
-		},
-		error: function(x,y,z){
-			alert('An error has occurred:\n' + x + '\n' + y + '\n' + z);
-		}
-
-
-	});
+		});
+    }else if(loginobj.email==''){
+    	// console.log(loginobj);
+    	alert("Please enter Email.")
+    }else if(loginobj.password == '') {
+    	alert("Please enter Password");
+    };
+	
 }
 
 $(document).on('pagecreate','#profile',function(){
