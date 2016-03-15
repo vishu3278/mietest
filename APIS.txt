@@ -1,0 +1,368 @@
+URL:
+http://localhost/mitalumni/apis/login.php
+
+Input : {"email":"surya.prakash@mahavastu.com","password":"123456"}
+
+Response: 
+
+{
+    "status": 1,
+    "data": {
+        "user": {
+            "id": "1",
+            "full_name": "suryamahavastu",
+            "email": "surya.prakash@mahavastu.com",
+            "display_name": "suryamahavastu",
+            "user_mobile": "",
+            "passing_year": "0000",
+            "branch": "",
+            "current_occupation": "",
+            "business_address": "",
+            "photo": "dataimg/profile/11521871_677496482302456_915201170_n - Copy.jpg"
+        }
+    }
+}
+
+
+URL :
+http://localhost/mitalumni/apis/regtration.php
+
+Input : {"email":"surya.prakash123@mahavastu.com","password":"123456","cnf_password":"123456","full_name":"Surya Prakash","user_mobile":"+91 865742135","passing_year":"2008","branch":"B. Tech","current_occupation":"Sr. Developer","business_address":"A-103, Rajat Vihar, New Delhi - 110011 India"}
+
+Response:
+Success -
+{
+    "status": 1,
+    "data": {
+        "user": {
+            "user_id": 19,
+            "full_name": "Surya Prakash",
+            "email": "surya.prakash123@mahavastu.com",
+            "display_name": "Surya Prakash"
+        }
+    }
+}
+
+
+
+URL : 
+http://localhost/mitalumni/apis/imageupload.php
+
+Input :
+file = upload image file
+user_id = 19
+
+Response :
+Success -
+{"status": 1,"msg":"Image Uploaded Successfully...!!","photo":"dataimg/profile/11521871_677496482302456_915201170_n - Copy.jpg"}
+
+
+
+URL: 
+http://localhost/mitalumni/apis/userslist.php
+
+INPUT : 
+{"user_id":"19"}
+
+Response :
+
+{
+    "status": 1,
+    "data": {
+        "user": [
+            {
+                "user_id": "6",
+                "full_name": "chandan",
+                "email": "chandan.kumar@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "chandan"
+            },
+            {
+                "user_id": "16",
+                "full_name": "ck",
+                "email": "chandan.r@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "ck"
+            },
+            {
+                "user_id": "14",
+                "full_name": "manish",
+                "email": "manish@m.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "manish"
+            },
+            {
+                "user_id": "18",
+                "full_name": "manisha",
+                "email": "manisha@gmail.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "manisha"
+            },
+            {
+                "user_id": "13",
+                "full_name": "manoj",
+                "email": "manoj@m.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "manoj"
+            },
+            {
+                "user_id": "9",
+                "full_name": "ME Admin",
+                "email": "meadmin@in.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "dataimg/group/91dam Fadu.jpg",
+                "display_name": "ME Admin"
+            },
+            {
+                "user_id": "7",
+                "full_name": "Nipul Jain",
+                "email": "nipul.jain@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "Nipul Jain"
+            },
+            {
+                "user_id": "1",
+                "full_name": "suryamahavastu",
+                "email": "surya.prakash@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "dataimg/profile/11521871_677496482302456_915201170_n - Copy.jpg",
+                "display_name": "suryamahavastu"
+            },
+            {
+                "user_id": "4",
+                "full_name": "vishu",
+                "email": "vishu@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "dataimg/profile/471.jpg",
+                "display_name": "vishu"
+            },
+            {
+                "user_id": "5",
+                "full_name": "vishwajeet",
+                "email": "vishwajeet. mandal@mahavastu.com",
+                "mobile": "",
+                "passing_year": "0000",
+                "branch": "",
+                "current_occupation": "",
+                "business_address": "",
+                "photo": "",
+                "display_name": "vishwajeet"
+            }
+        ]
+    }
+}
+
+    
+	
+/* 12-Jan-2015 */	
+	
+Get Chat Data :
+URL :http://localhost/mitalumni/apis/chat-data.php
+
+{"user_id":"5","receiver_id":"4" ,"page_id":"2" } in case of user to user chat
+
+
+
+POST Chat Data :
+URL :http://localhost/mitalumni/apis/chat-post.php
+
+{"user_id":"4","receiver_id":"5" ,"text":"is anyone there" }in case of user to user chat
+
+
+
+Chat Image Upload
+URL :  http://localhost/mitalumni/apis/chatimageupload.php 
+Data: - {"user_id":"4","receiver_id":"5" ,"image":"data:image/png;base64,R0lGODlhigKWAfcAAOrv+LnMuOno26yWcurczcu1ksfWyUpHM9nYyVgpDlNSRbn......."}
+
+
+Result- 
+{
+    "status": 1,
+    "error": "Image Uploaded Successfully...!!"
+}
+
+
+
+
+EVENTS list :
+
+
+URL: http://localhost/mitalumni/apis/eventlist.php
+
+INPUT : {"user_id":"4"}  /* send user id if get events of a particular user */
+
+RESULT: 
+
+{
+    "status": 1,
+    "data": {
+        "events": [
+            {
+                "event_id": "1",
+                "title": "New Year Celebration with all MIETIANS",
+                "banner": "dataimg/events/1557987324721.png",
+                "description": "Sangeeta Jain has tried several time to kill her 70 years mother-in-law. You can see the video that I'm revealing today. The video captured on 05th January through CCTV which i advised to put hidden in room.",
+                "address": "A-104, MIET College, Saket Delhi- 110033 India",
+                "event_date": "2016-01-31",
+                "event_time": "8 PM",
+                "organizer": "Mayank Kulkarni",
+                "user_id": "4"
+            }
+        ]
+    }
+}
+
+
+
+EVENT Add :
+URL : http://localhost/mitalumni/apis/event-add.php
+
+INPUT : form submit in POST content type
+ {"title":"New Year Celebration with all MIETIANS","description":"Sangeeta Jain has tried several time to kill her 70 years mother-in-law. You can see the video that I'm revealing today. The video captured on 05th January through CCTV which i advised to put hidden in room","address":"A-104, MIET College, Saket Delhi- 110033 India","event_date":"2016-01-31","event_time":"4 PM","organizer":"Manish Kumar","banner":"Browse image ","user_id":"4"}
+
+Result :
+
+{
+    "status": 1,
+    "data": {
+        "user": {
+            "event_id": 4,
+            "title": "Lohari",
+            "description": "Lohari description",
+            "banner": "dataimg/events/1557987324721.png",
+            "address": "address",
+            "event_date": "2016-01-22",
+            "event_time": "6 PM",
+            "organizer": "Manish Jain"
+        }
+    }
+}
+
+
+
+EVENT EDIT :
+
+URL: http://localhost/mitalumni/apis/event-edit.php
+
+INPUT : Form submit in POST content type
+
+title = Rashabandhan
+description = Rashabandhan description
+banner = Choose Files
+address = Noida india
+event_date = 2016-01-22
+event_time = 6 PM
+organizer = Manish Kumar Jain
+user_id = 4
+event_id = 3
+
+
+RESULT : 
+
+{
+    "status": 1,
+    "data": {
+        "user": {
+            "event_id": "3",
+            "title": "Rashabandhan",
+            "description": "Rashabandhan description",
+            "banner": "dataimg/events/41452595121.jpg",
+            "address": "Noida india",
+            "event_date": "2016-01-22",
+            "event_time": "6 PM",
+            "organizer": "Manish Kumar Jain"
+        }
+    }
+}
+
+
+
+Event Join Now:
+
+URL : http://localhost/mitalumni/apis/event-join-now.php
+
+INPUT : {"user_id":"4","event_id":"3"}
+
+RESULT : 
+{
+    "status": 1,
+    "data": {
+        "enroll": {
+            "event_id": 6,
+            "registration_no": "MIETU4E2JAN",
+            "user_id": "4"
+        }
+    }
+}
+
+
+
+
+Uesr Profile :
+
+URL : http://mahavastu.com/mitalumni/apis/user-profile.php
+
+INPUT :  {"user_id":"20"}
+
+RESULT :
+{
+    "status": 1,
+    "data": {
+        "user": [
+            {
+                "user_id": "20",
+                "full_name": "a ",
+                "email": "a@a.com",
+                "mobile": "+91 865742135",
+                "passing_year": "2016",
+                "branch": "B. Tech",
+                "current_occupation": "Sr. Developer",
+                "business_address": "A-103, Rajat Vihar, New Delhi - 110011 India",
+                "photo": "",
+                "display_name": "a "
+            }
+        ]
+    }
+}
