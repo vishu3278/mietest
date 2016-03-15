@@ -52,7 +52,7 @@
             <input type="tel" name="mobile" id="mobile" placeholder="Mobile">
             <span class="icon-smartphone"></span> </div>
           <div class="input-group has-icon">
-            <input type="date" name="date" id="date" placeholder="Batch ( Admission Year)">
+            <input type="date" name="date" id="date" placeholder="Batch (Admission Year)">
             <span class="icon-event"></span> </div>
           <div class="input-group has-icon">
             <!--<select data-native-menu="false" >
@@ -70,14 +70,14 @@
               <option value="2">Electrical</option>
               <option value="3">Computer</option>
             </select>-->
-            <input type="text" name="occu" id="occu" placeholder="Occupation">
+            <input type="text" name="occup" id="occup" placeholder="Occupation">
             <span class="icon-business"></span> </div>
           <div class="input-group has-icon">
             <input type="text" name="address" id="address" placeholder="Business Address" >
             <span class="icon-place"></span> </div>
-          <div class="input-group has-icon">
+          <!--<div class="input-group has-icon">
             <input type="text" name="hobbies" id="hobbies" placeholder="Hobbies" >
-            <span class="icon-brush"></span> </div>
+            <span class="icon-brush"></span> </div>-->
           <div class="input-group has-icon">
             <input type="password" name="pass1" id="pass1" placeholder="Password">
             <span class="icon-lock_outline"></span> </div>
@@ -85,7 +85,7 @@
             <input type="password" name="pass2" id="pass2" placeholder="Confirm Password">
             <span class="icon-lock_outline"></span> </div>
           <!--<button type="button" class="ui-btn-prime">Submit</button>-->
-          <button type="submit" class="ui-btn-second">Submit</button>
+          <button type="button" onClick="regProcess()" class="ui-btn-second">Submit</button>
         </form>
       </div> <!--tab2 end-->
       
@@ -182,7 +182,7 @@
 
 <!--add event page-->
 <div data-role="page" id="addEvent">
-	<div data-role="header"><a href="#welcome" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
+	<div data-role="header"><a href="#list" data-rel="back" class="ui-btn ui-btn-left img-btn"><span class="icon-arrow_back "></span><img src="img/logo-icon.png" width="76" height="64" alt="miet"></a>
         <h1>Add Event</h1>
         <a href="#addeventmenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>
         <div data-role="popup" id="addeventmenu">
@@ -195,27 +195,32 @@
           </ul>
         </div>
       </div>
-	<div data-role="content">
-    	<div class="ui-body">
-        	<div class="profile">
-              <div class="image"><img src="img/default.jpg" width="100" height="100" alt="vishu"></div>
-            </div>
-            <form class="nice-form ui-noboxshadow">
-              <div class="input-group has-icon">
-                <input type="text" placeholder="Event Name" ><span class="icon-event"></span>
-              </div>
-              <div class="input-group has-icon">
-                <input type="date" placeholder="Event Date">
-                <span class="icon-date_range"></span> </div>
-              <div class="input-group has-icon">
-                <input type="file" placeholder="Image">
-                <span class="icon-image"></span> </div>
-              <div class="input-group has-icon">
-                <textarea name="" cols="6" rows="" placeholder="Description"></textarea>
-                <span class="icon-description"></span> </div>
-              <button type="button" class="ui-btn-prime">Create</button>
-            </form>
-      </div>
+	<div data-role="content" class="ui-content">
+        <div class="profile">
+          <div class="image"><img id="eventImg" src="img/default.jpg" alt="event"></div>
+        </div>
+        <form id="addEventForm" class="nice-form ui-noboxshadow">
+          <div class="input-group has-icon">
+            <input type="text" name="eventname" id="eventname" placeholder="Event Name" >
+            <span class="icon-event"></span>
+          </div>
+          <div class="input-group has-icon">
+            <input type="date" name="eventdate" id="eventdate" placeholder="Event Date">
+            <span class="icon-date_range"></span> </div>
+          <div class="input-group has-icon">
+            <input type="time" name="eventime" id="eventime" placeholder="Event Time">
+            <span class="icon-date_range"></span> </div>
+          <div class="input-group has-icon">
+            <input type="text" name="eventaddress" id="eventaddress" placeholder="Event Address">
+            <span class="icon-date_range"></span> </div>
+          <div class="input-group has-icon">
+            <input type="file" name="eventimg" id="eventimg" placeholder="Image">
+            <span class="icon-image"></span> </div>
+          <div class="input-group has-icon">
+            <textarea name="eventdetail" id="eventdetail" cols="6" rows="" placeholder="Description"></textarea>
+            <span class="icon-description"></span> </div>
+          <button type="button" onClick="addEvent()" class="ui-btn-prime">Create</button>
+        </form>
     </div>
 </div>
 <!--Invite page-->
@@ -263,10 +268,8 @@
     <!--<a href="#listmenu" data-rel="popup" class=" ui-btn ui-btn-right "><span class="icon-more_vert"></span></a>-->
     <div data-role="popup" id="listmenu">
       <ul data-role="listview" data-mini="true" class="ui-nodisc-icon ui-alt-icon">
-        <li><a href="#list">List</a></li>
         <li><a href="#chat">Chat</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#invite">Invite</a></li>
+        <li><a href="#addEvent">Add Event</a></li>
         <li><a href="#welcome">Signout</a></li>
       </ul>
     </div>
