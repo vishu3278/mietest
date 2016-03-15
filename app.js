@@ -1,4 +1,4 @@
-var HOSTURL = 'http://mahavastu.com/mitalumni/';
+var HOSTURL = 'http://localhost/mitalumni/';
 var loggedUserId = 0;
 var output = $("#output");
     output.hide();
