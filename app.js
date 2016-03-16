@@ -44,15 +44,19 @@ function loginProcess () {
 					// console.log(data.data.user.user_id);
 					$.mobile.changePage("#profile", {transition: "slideup"});
 				}else{
-					alert(data.error);
+					// alert(data.error);
 					// console.log(data.error);
-					// output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
+					output.html("<p>"+data.error+"</p>").show("fast").delay(5000).hide("slow");
 
 				}
 			},
-			error: function(x,y,z){
+			error: function(error){
 				$.mobile.loading("hide");
-				alert('An error has occurred:\n' + x + '\n' + y + '\n' + z);
+				alert('An error has occurred:' + error);
+				output.html("<p>"+error+"</p>").show("fast").delay(5000).hide("slow");
+			},
+			complete:function(data, status){
+				output.html("<p>"+data.statusTest+"</p>").show("fast").delay(5000).hide("slow");
 			}
 		});
     }else if(loginobj.email==''){
@@ -220,18 +224,18 @@ $(document).on('pagecreate','#list',function(){
 				// $.mobile.changePage("#profile", {transition: "slideup"});
 			}else{
 				alert(data.error);
-				output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
+				// output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
 			}
 		},
-		error: function(x,y,z){
-			alert('An error has occurred:\n' + x + '\n' + y + '\n' + z);
+		error: function(error){
+			alert("An error has occurred: "+ error );
 		}
 	});
 });
 
 
 /* -- add event -- */
-function addEvent() {
+function addEvent(){
 	// alert("click");
 	var evtName = $("#addEventForm #eventname").val(),
 		evtDate = $("#addEventForm #eventdate").val(),
@@ -251,22 +255,22 @@ function addEvent() {
 		type : 'POST',
 		contentType: 'application/json',		// The content type used when sending data to the server.
 		cache: false,				// To unable request pages to be cached
-		// processData:false,			// To send DOMDocument or non processed data file it is set to false
-		success: function (data, status, jqXHR) {
-			console.log(data);
-			if(data.status==1){
-				// alert(data.data.user.full_name);
-				console.log(data.data.user[0].full_name);
-				
+		processData:false,			// To send DOMDocument or non processed data file it is set to false
+		success: function (result, status, jqXHR) {
+			console.log(result);
+			if(result.status==1){
+				alert(result.data.user.full_name);
+				console.log(result.data.user[0].full_name);
 				// $.mobile.changePage("#profile", {transition: "slideup"});
 			}else{
-				alert(data.error);
-				// output.html("<p>Something went wrong while processing the ajax request.</p>").show("fast").delay(5000).hide("slow");
+				alert(result.error);
+				output.html(result.error).show("fast").delay(5000).hide("slow");
 			}
 		},
-		error: function(){
-			// alert('An error has occurred:\n' + x + '\n' + y + '\n' + z);
-			console.error("Error");
+		error: function(error){
+			alert(error);
+			console.error(error);
+			output.html(error).show("fast").delay(5000).hide("slow");
 		}
 	});
 }
