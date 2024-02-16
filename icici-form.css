@@ -1,0 +1,167 @@
+:root {
+    --green1: #55ae20;
+    --green1-rgb: 85, 174, 32;
+    --green3: #4B9C1C;
+    --green2: #B0DE95;
+    --alto: #FDFEFC;
+    --pgbg: #E8EEED;
+}
+body {
+    font-weight: normal;
+}
+.ot-container{
+  max-width: 80%;
+  margin: auto;
+}
+.breadcrumb {
+  align-items: flex-end;
+  margin-top: 15px;
+}
+.breadcrumb-item {
+  font-weight: 400;
+  position: relative;
+}
+.breadcrumb-item a {
+  flex: 1 0 auto;
+}
+.beard-icon {
+  display: flex;
+  position: absolute;
+  top: -30px;
+  gap: 0.5rem;
+/*  width: 65px;*/
+  align-items: center;
+}
+.beard-icon img {
+  width: 65px;
+}
+.page-bg {
+	background-color: var(--pgbg);
+}
+.box {
+	background-color: var(--alto);
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--green2);
+    border-radius: 0.325rem;
+    box-shadow: 1px 4px 1px rgba(var(--green1-rgb), 0.2);
+}
+
+.btn.pill {
+	border-radius: 10rem;
+	padding-inline: 2rem;
+	font-weight: 500;
+}
+.btn.green {
+	background-color: var(--green1);
+	color: white;
+}
+.btn.green:hover {
+	background-color: var(--green3);
+}
+.btn[class*='outline-'] {
+	background-color: transparent;
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.btn[class*='-secondary'] {
+	border-color: var(--bs-secondary);
+}
+.btn[class*='-green'] {
+	border-color: var(--green1);
+}
+.btn:focus{
+    box-shadow: 0 0 0 0.25rem rgba(var(--green1-rgb), 0.25);
+}
+.form-group {
+    margin-top: 0.5rem;
+    padding-bottom: 2px;
+}
+
+.form-label,
+.col-form-label,
+.form-check-label {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--bs-gray-700);
+}
+
+.form-label {
+    margin-bottom: 0.25rem;
+}
+
+.form-control,
+.form-select {
+    border-radius: 2px;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+    border-color: var(--green2);
+    box-shadow: 0 0 0 0.25rem rgba(var(--green1-rgb), 0.12);
+}
+
+.form-check-input:checked {
+    border-color: var(--green1);
+    background-color: var(--green1);
+}
+
+.border-green {
+    border-color: var(--green1) !important;
+}
+
+.text-green {
+    color: var(--green1);
+}
+.text-green3 {
+	color: var(--green3);
+}
+
+.box {
+    display: none;
+}
+
+.steps {
+    position: relative;
+    max-width: 15rem;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.steps::before {
+    content: '';
+    display: block;
+    border-bottom: 4px solid var(--bs-gray-400);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -2px;
+}
+
+.step {
+    height: 20px;
+    width: 20px;
+    background-color: var(--green2);
+    border: 1px solid var(--pgbg);
+    border-radius: 50%;
+    position: relative;
+}
+
+/* Mark the active step: */
+.step.active {
+    background-color: var(--green1);
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #04AA6D;
+}
+@media screen and (max-width: 699px) {
+    .ot-container {
+        max-width: 98%;
+    }
+}
