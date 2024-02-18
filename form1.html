@@ -79,11 +79,15 @@
                                             <div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="check10_1" value="1">
-                                                    <label class="form-check-label" for="check10_1">Rural</label>
+                                                    <label class="form-check-label" for="check10_1">Business Sector</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="check10_2" value="2">
-                                                    <label class="form-check-label" for="check10_2">Social</label>
+                                                    <label class="form-check-label" for="check10_2">Rural</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="check10_3" value="3">
+                                                    <label class="form-check-label" for="check10_3">Social</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -265,32 +269,37 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="row mt-3">
-                            <label class="col-md-10 col-form-label">How long have you/the firm of which you are a member/partner, etc. been in the business / profession? (in years) </label>
+                        <div class="row ">
                             <div class="col-md">
-                                <input type="number" class="form-control form-control-sm" maxlength="2" value="">
+                                <div class="form-group">
+                                    <label class="form-label">How long have you/the firm of which you are a member/partner, etc. been in the business / profession? (in years) </label>
+                                    <input type="number" class="form-control form-control-sm" maxlength="2" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Please give a brief description of your business </label>
+                                    <textarea class="form-control" cols="30" rows="2"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mt-3">
-                            <label class="col-md-4 col-form-label">Please give a brief description of your business </label>
+                            <div class="col-auto d-none d-sm-block">
+                                <div class="vr h-100"></div>
+                            </div>
                             <div class="col-md">
-                                <input type="text" class="form-control form-control-sm" value="">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="yes" id="check123">
+                                    <label class="form-check-label" for="check123">
+                                        Are you or any of the proposed applicants a PEP* or a close relative of a PEP*?
+                                    </label>
+                                    <div class="form-text">*Politically Exposed Persons (PEPs) are individuals who are or have been entrusted with prominent public functions in a foreign country, e.g., Heads of States/Governments, senior politicians, senior government/judicial/military officers, senior executives of state-owned corporations, important political party officials, etc.</div>
+                                </div>
+                                <div id="check123yes" class="form-group d-none">
+                                    <label class="col-md-4 col-form-label">If yes, please give details </label>
+                                    <div class="col-md">
+                                        <input type="text" class="form-control form-control-sm" value="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- <div class="border-bottom border-2"></div> -->
-                        <div class="form-check mt-2">
-                            <input class="form-check-input" type="checkbox" value="" id="check123">
-                            <label class="form-check-label" for="check123">
-                                Are you or any of the proposed applicants a PEP* or a close relative of a PEP*?
-                            </label>
-                            <div class="form-text">*Politically Exposed Persons (PEPs) are individuals who are or have been entrusted with prominent public functions in a foreign country, e.g., Heads of States/Governments, senior politicians, senior government/judicial/military officers, senior executives of state-owned corporations, important political party officials, etc.</div>
-                        </div>
-                        <div class="row mt-3 ">
-                            <label class="col-md-4 col-form-label">If yes, please give details </label>
-                            <div class="col-md">
-                                <input type="text" class="form-control form-control-sm" value="">
-                            </div>
-                        </div>
                     </div>
                     <!-- step 3 -->
                     <div class="p-3 mb-4 box bg-gradient animate__animated animate__fadeIn">
@@ -300,10 +309,6 @@
                                 <div class="form-group">
                                     <label class="form-label">Please indicate the limit of indemnity required: Any One Accident<sup>1</sup> (AOA) (₹) </label>
                                     <input type="text" class="form-control form-control-sm">
-                                    <!-- <select class="form-select" required>
-                                            <option value="MR">MR</option>
-                                            <option value="MS" selected>MS</option>
-                                        </select> -->
                                 </div>
                             </div>
                             <div class="col-md">
@@ -337,7 +342,7 @@
                             <div class="col-md">
                                 <div class="form-group">
                                     <label class="form-label">Retroactive date </label>
-                                    <input type="text" class="form-control form-control-sm" value="">
+                                    <input type="date" class="form-control form-control-sm" value="">
                                 </div>
                             </div>
                             <div class="col-md">
@@ -392,27 +397,29 @@
                                 </div>
                             </div>
                         </div>
-                        <h6 class="mt-3 mb-2">If so, please provide the following details</h6>
-                        <div class="row ">
-                            <div class="col-md"><label class="form-label">Name of Principal/partner/Director</label></div>
-                            <div class="col-md"><label class="form-label">Educational Qualification</label></div>
-                            <div class="col-md"><label class="form-label">Date of Qualification</label></div>
-                            <div class="col-md"><label class="form-label">Date of leaving/retirement/death</label></div>
-                            <div class="col-md-2"><label class="form-label">Years in practice</label></div>
-                        </div>
-                        <div class="row ">
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md-2"><input type="text" class="form-control form-control-sm"></div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
-                            <div class="col-md-2"><input type="text" class="form-control form-control-sm"></div>
+                        <div id="radio10yes" class="d-none animate__animated animate__fadeIn">
+                            <h6 class="mt-3 mb-2">If so, please provide the following details</h6>
+                            <div class="row ">
+                                <div class="col-md"><label class="form-label">Name of Principal/partner/Director</label></div>
+                                <div class="col-md"><label class="form-label">Educational Qualification</label></div>
+                                <div class="col-md"><label class="form-label">Date of Qualification</label></div>
+                                <div class="col-md"><label class="form-label">Date of leaving/retirement/death</label></div>
+                                <div class="col-md-2"><label class="form-label">Years in practice</label></div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="date" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="date" class="form-control form-control-sm"></div>
+                                <div class="col-md-2"><input type="text" class="form-control form-control-sm"></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="date" class="form-control form-control-sm"></div>
+                                <div class="col-md"><input type="date" class="form-control form-control-sm"></div>
+                                <div class="col-md-2"><input type="text" class="form-control form-control-sm"></div>
+                            </div>
                         </div>
                         <h6 class="mt-3 mb-0">Please furnish the following details</h6>
                         <div class="row form-group">
@@ -468,7 +475,14 @@
                             <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
                             <div class="col-md"><input type="text" class="form-control form-control-sm"></div>
                         </div>
-                        <p class="form-text">Please attach appropriate documents in support of the above</p>
+                        <h6 class="mt-3">Please attach appropriate documents in support of the above</h6>
+                        <div class="row form-group">
+                            <div class="col-md"><label class="form-label">Upload file 1</label><input type="file" class="form-control form-control-sm"></div>
+                            <div class="col-md"><label class="form-label">Upload file 2</label><input type="file" class="form-control form-control-sm"></div>
+                            <div class="col-md"><label class="form-label">Upload file 3</label><input type="file" class="form-control form-control-sm"></div>
+                            <div class="col-md"><label class="form-label">Upload file 4</label><input type="file" class="form-control form-control-sm"></div>
+                            <div class="col-md"><label class="form-label">Upload file 5</label><input type="file" class="form-control form-control-sm"></div>
+                        </div>
                     </div>
                     <!-- step 5 -->
                     <div class="box p-3 mb-4 bg-gradient animate__animated animate__fadeIn">
@@ -478,97 +492,112 @@
                             <div class="col-md">
                                 <div class="form-group">
                                     <label class="form-label">Do you engage persons outside your organisation?</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio23" id="radio23_1" value="yes">
-                                            <label class="form-check-label" for="radio23_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio23" id="radio23_2" value="no">
-                                            <label class="form-check-label" for="radio23_2">No</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-text">If yes, specify the details of purpose of such engagement and nature of control exercised (specimen contract of engagement to be enclosed).</div>
                                 </div>
                             </div>
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Has any insurance Company declined your proposal</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio24" id="radio24_1" value="yes">
-                                            <label class="form-check-label" for="radio24_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio24" id="radio24_2" value="no">
-                                            <label class="form-check-label" for="radio24_2">No</label>
-                                        </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio23" id="radio23_1" value="yes">
+                                        <label class="form-check-label" for="radio23_1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio23" id="radio23_2" value="no">
+                                        <label class="form-check-label" for="radio23_2">No</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div id="radio23yes" class="row form-group d-none ">
                             <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Required an increased premium</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio25" id="radio25_1" value="yes">
-                                            <label class="form-check-label" for="radio25_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio25" id="radio25_2" value="no">
-                                            <label class="form-check-label" for="radio25_2">No</label>
-                                        </div>
-                                    </div>
-                                </div>
+                                <label class="form-label">If yes, specify the details of purpose of such engagement and nature of control exercised (specimen contract of engagement to be enclosed).</label>
                             </div>
+                            <div class="col-md-3">
+                                <input type="file" class="form-control form-control-sm">
+                            </div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Refused to renew your policy</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio26" id="radio26_1" value="yes">
-                                            <label class="form-check-label" for="radio26_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio26" id="radio26_2" value="no">
-                                            <label class="form-check-label" for="radio26_2">No</label>
-                                        </div>
+                                <label class="form-label">Has any insurance Company declined your proposal</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio24" id="radio24_1" value="yes">
+                                        <label class="form-check-label" for="radio24_1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio24" id="radio24_2" value="no">
+                                        <label class="form-check-label" for="radio24_2">No</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row form-group">
                             <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Canceled such a policy</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio27" id="radio27_1" value="yes">
-                                            <label class="form-check-label" for="radio27_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio27" id="radio27_2" value="no">
-                                            <label class="form-check-label" for="radio27_2">No</label>
-                                        </div>
+                                <label class="form-label">Required an increased premium</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio25" id="radio25_1" value="yes">
+                                        <label class="form-check-label" for="radio25_1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio25" id="radio25_2" value="no">
+                                        <label class="form-check-label" for="radio25_2">No</label>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Have you taken a professional indemnity policy in the past</label>
-                                    <div class="d-inline-block ms-3">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio28" id="radio28_1" value="yes">
-                                            <label class="form-check-label" for="radio28_1">Yes</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio28" id="radio28_2" value="no">
-                                            <label class="form-check-label" for="radio28_2">No</label>
-                                        </div>
+                                <label class="form-label">Refused to renew your policy</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio26" id="radio26_1" value="yes">
+                                        <label class="form-check-label" for="radio26_1">Yes</label>
                                     </div>
-                                    <div class="form-text">If so, please provide the details</div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio26" id="radio26_2" value="no">
+                                        <label class="form-check-label" for="radio26_2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md">
+                                <label class="form-label">Canceled such a policy</label>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block ">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio27" id="radio27_1" value="yes">
+                                        <label class="form-check-label" for="radio27_1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio27" id="radio27_2" value="no">
+                                        <label class="form-check-label" for="radio27_2">No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md">
+                                <label class="form-label">Have you taken a professional indemnity policy in the past</label>
+                                <div class="form-text">If so, please provide the details</div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="d-inline-block ">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio28" id="radio28_1" value="yes">
+                                        <label class="form-check-label" for="radio28_1">Yes</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio28" id="radio28_2" value="no">
+                                        <label class="form-check-label" for="radio28_2">No</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -597,36 +626,8 @@
                             Are you aware of any neglect, omission or error or existence of any circumstances likely to give rise to a legal claim?</p>
                         <div class="form-group">
                             <label class="form-label">Any additional information relevant to the Policy</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control form-control-sm">
                             <div class="form-text">Note: Please use additional sheets if space is not sufficient to complete details</div>
-                        </div>
-                        <hr>
-                        <h5 class="text-green3">Declaration</h5>
-                        <div class="row  ">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Designation</label>
-                                    <input type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Place</label>
-                                    <input type="text" class="form-control form-control-sm">
-                                </div>
-                            </div>
-                            <div class="col-md">
-                                <div class="form-group">
-                                    <label class="form-label">Date</label>
-                                    <input type="date" class="form-control form-control-sm">
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="d-flex my-4 gap-4 justify-content-center">
@@ -649,6 +650,30 @@
     <script type="text/javascript">
     var currentTab = 0; // Current tab is set to be the first tab (0)
     showTab(currentTab); // Display the current tab
+
+    $("input[type=radio]").on('click', function(event) {
+        // event.preventDefault();
+        var triggerName = $(this).attr('name');
+        var triggerVal = $(this).val();
+
+        $("[id^=" + triggerName + "]:not(:radio)").addClass('d-none')
+        $("#" + triggerName + triggerVal).removeClass('d-none')
+
+    });
+
+    $("input[type=checkbox]").on('click', function(event) {
+        // event.preventDefault();
+        var triggerId = $(this).attr('id');
+        var triggerVal = $(this).val();
+
+        // console.log($(this).prop('checked'), triggerId, triggerVal)
+        if ($(this).prop('checked')) {
+            $("#" + triggerId + triggerVal).removeClass('d-none')
+        } else {
+            $("#" + triggerId + triggerVal).addClass('d-none')
+        }
+
+    });
 
     function showTab(n) {
         // This function will display the specified tab of the form ...

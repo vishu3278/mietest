@@ -75,35 +75,35 @@ body {
 .btn:focus{
     box-shadow: 0 0 0 0.25rem rgba(var(--green1-rgb), 0.25);
 }
-.form-group {
+.box .form-group {
     margin-top: 0.5rem;
     padding-bottom: 2px;
 }
 
-.form-label,
-.col-form-label,
-.form-check-label {
+.box .form-label,
+.box .col-form-label,
+.box .form-check-label {
     font-weight: 500;
     font-size: 14px;
     color: var(--bs-gray-700);
 }
 
-.form-label {
+.box .form-label {
     margin-bottom: 0.25rem;
 }
 
-.form-control,
-.form-select {
+.box .form-control,
+.box .form-select {
     border-radius: 2px;
 }
 
-.form-control:focus,
-.form-check-input:focus {
+.box .form-control:focus,
+.box .form-check-input:focus {
     border-color: var(--green2);
     box-shadow: 0 0 0 0.25rem rgba(var(--green1-rgb), 0.12);
 }
 
-.form-check-input:checked {
+.box .form-check-input:checked {
     border-color: var(--green1);
     background-color: var(--green1);
 }
